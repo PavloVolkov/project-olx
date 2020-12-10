@@ -230,7 +230,7 @@
   }
 }
 
-.user__button-mobile {
+.header__button-mobile {
   @media screen and (min-width: 1279px) {
     display: none;
   }
@@ -342,7 +342,7 @@
 }
 
 .filter__button-clear::before {
-  content: "";
+  content: '';
   width: 22px;
   height: 20px;
   background-repeat: no-repeat;
