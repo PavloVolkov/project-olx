@@ -1,17 +1,37 @@
+// Логика закрытия модалки по кнопке закрыть, искейпу и бэкдропу
 const refs = {
-  openModalBtn: document.querySelector('.header__create-add-btn'),
-  closeModalBtn: document.querySelector('.add-modal__close-btn'),
-  modal: document.querySelector('[data-backdrop]'),
+  openAddModalBtn: document.querySelector('[data-action="open-modal"]'),
+  closeAddModalBtn: document.querySelector('[data-action="close-modal"]'),
+  backdrop: document.querySelector('.js-backdrop'),
 };
 
-refs.openModalBtn.addEventListener('click', toggleModal);
-refs.closeModalBtn.addEventListener('click', toggleModal);
+refs.openAddModalBtn.addEventListener('click', onOpenAddModal);
+refs.closeAddModalBtn.addEventListener('click', onCloseAddModal);
+refs.backdrop.addEventListener('click', onBackdropClick);
 
-function toggleModal() {
-  document.body.classList.toggle('modal-open');
-  refs.modal.classList.toggle('is-hidden');
+function onOpenAddModal() {
+  window.addEventListener('keydown', onEscKeyPress);
+  document.body.classList.add('show-modal');
 }
 
+function onCloseAddModal() {
+  window.removeEventListener('keydown', onEscKeyPress);
+  document.body.classList.remove('show-modal');
+}
+
+function onBackdropClick(event) {
+  if (event.currentTarget === event.target) {
+    onCloseAddModal();
+  }
+}
+
+function onEscKeyPress(event) {
+  if (event.code === 'Escape') {
+    onCloseAddModal();
+  }
+}
+
+// Логика добавления изображения и перемещения "+" на следующий блок
 let imgLoaderArea;
 
 imgLoaderArea = document.querySelector('.add-modal__product-photos');
