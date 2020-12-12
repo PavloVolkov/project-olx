@@ -12,6 +12,6 @@ import heartfill from './images/heartfill.png';
 import './componentsJS/addModal';
 import './componentsJS/myCalls';
 // import './componentsJS/prodCard';
-// import './js/myCalls'
+import './js/myCalls'
 
 // import './js/exampleBackend'
