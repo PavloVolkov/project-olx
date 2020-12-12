@@ -1,14 +1,36 @@
-(() => {
-  const menuBtnRef = document.querySelector("[data-menu-button]");
-  const mobileMenuRef = document.querySelector("[data-menu]");
+export default openAndCloseMenu()
 
-  menuBtnRef.addEventListener("click", () => {
-    const expanded =
-      menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+function openAndCloseMenu() {
+  const refs = {
+    openModalBtn: document.querySelector('[data-menu-open]'),
+    closeModalBtn: document.querySelector('[data-menu-close]'),
+    modal: document.querySelector('[data-backdrop]'),
+  };
 
-    menuBtnRef.classList.toggle("is-open");
-    menuBtnRef.setAttribute("aria-expanded", !expanded);
+  refs.openModalBtn.addEventListener('click', onClickOpenModal);
+  refs.closeModalBtn.addEventListener('click', onClickCloseModal);
 
-    mobileMenuRef.classList.toggle("is-open");
-  });
-})();
+  function onClickOpenModal() {
+    window.addEventListener("keydown", onKeyDown);
+    refs.modal.addEventListener("click", onOverlayClick);
+    refs.modal.classList.add("is-open");
+  }
+
+  function onClickCloseModal() {
+    window.removeEventListener("keydown", onKeyDown);
+    refs.modal.removeEventListener("click", onOverlayClick);
+    refs.modal.classList.remove("is-open");
+  }
+
+  function onOverlayClick(event) {
+    if (event.currentTarget === event.target) {
+      onClickCloseModal()
+    }
+  }
+  
+  function onKeyDown(event) {
+    if (event.code === "Escape") {
+      onClickCloseModal()
+    }
+}
+}
