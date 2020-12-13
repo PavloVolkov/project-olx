@@ -1,3 +1,7 @@
+// body.hidden {
+//   overflow: hidden;
+// }
+
 body.show-modal .backdrop {
   opacity: 1;
   visibility: visible;
@@ -19,6 +23,7 @@ body.show-modal .modal {
   height: 100vh;
   background-color: $backdropbgc;
   z-index: 999;
+  overflow-y: scroll;
 
   pointer-events: none;
   opacity: 0;
@@ -96,13 +101,17 @@ body.show-modal .modal {
   padding-left: 23px;
 }
 
-.input:required:invalid:not(:placeholder-shown) {
+// .input:required:invalid:not(:placeholder-shown) {
+//   border: 1px solid rgb(255, 0, 0);
+//   background-color: rgb(247, 243, 242);
+// }
+// .input:required:valid:not(:placeholder-shown) {
+//   border: 1px solid rgb(0, 128, 0);
+//   background-color: rgb(242, 247, 238);
+// }
+
+.input.error {
   border: 1px solid rgb(255, 0, 0);
-  background-color: rgb(247, 243, 242);
-}
-.input:required:valid:not(:placeholder-shown) {
-  border: 1px solid rgb(0, 128, 0);
-  background-color: rgb(242, 247, 238);
 }
 
 .input:hover,
@@ -147,6 +156,7 @@ body.show-modal .modal {
   background-image: url('/src/images/icon-add.svg');
   background-repeat: no-repeat;
   background-position: center;
+  margin: 0;
 }
 
 .choose-this:hover,
@@ -338,3 +348,24 @@ body.show-modal .modal {
     margin-left: 210px;
   }
 }
+
+// .add-form__error-message.error-price {
+//   display: none;
+// }
+
+// .add-form__error-message.error-price.visible {
+//   display: block;
+// }
+
+// .add-form__error-message {
+//   transition: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+//   opacity: 0;
+// }
+
+// .add-form__error-message.visible {
+//   display: block;
+//   opacity: 1;
+//   width: 100%;
+//   color: red;
+//   border-bottom: 1px solid red;
+// }

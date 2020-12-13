@@ -1,12 +1,14 @@
-// Логика закрытия модалки по кнопке закрыть, искейпу и бэкдропу
 const refs = {
+  form: document.querySelector('.js-add-form'),
   openAddModalBtn: document.querySelector('[data-action="open-modal"]'),
   closeAddModalBtn: document.querySelector('[data-action="close-modal"]'),
   backdrop: document.querySelector('.js-backdrop'),
   selectorCategory: document.querySelector('.add-modal__product-select'),
   imgLoaderArea: document.querySelector('.add-modal__product-photos'),
+  addImage: document.querySelector('.add-image'),
 };
 
+// Логика закрытия модалки по кнопке закрыть, искейпу и бэкдропу
 refs.openAddModalBtn.addEventListener('click', onOpenAddModal);
 refs.closeAddModalBtn.addEventListener('click', onCloseAddModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
@@ -35,8 +37,6 @@ function onEscKeyPress(event) {
 
 // Логика добавления изображения и перемещения "+" на следующий блок
 let imgLoaderArea;
-
-// imgLoaderArea = document.querySelector('.add-modal__product-photos');
 
 refs.imgLoaderArea.addEventListener('click', chooseImgBlock);
 refs.imgLoaderArea.addEventListener('change', previewImg);
@@ -83,7 +83,7 @@ function changeImgBlock(event) {
   imgTarget.nextElementSibling.classList.remove('choose-this');
   let imgId = Number(event.target.dataset.id);
   imgId += 1;
-  if (imgId > 6) {
+  if (imgId > 5) {
     return;
   }
   const nextImg = document.querySelector(`[data-id="${imgId}"]`);
@@ -92,6 +92,7 @@ function changeImgBlock(event) {
 }
 
 //===========================
+// Логика подгрузки и отображения категорий с бэкенда при нажатии на выпадашку выбора категории
 fetch('https://callboard-backend.herokuapp.com/call/categories')
   .then(response => response.json())
   .then(result => {
