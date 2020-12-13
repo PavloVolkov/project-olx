@@ -1,5 +1,9 @@
-const openModalCallsBtn = document.querySelector('[data-action="open-modal-calls"]');
-const closeModalCallsBtn = document.querySelector('[data-action="close-modal-calls"]');
+const openModalCallsBtn = document.querySelector(
+  '[data-action="open-modal-calls"]',
+);
+const closeModalCallsBtn = document.querySelector(
+  '[data-action="close-modal-calls"]',
+);
 const modalBackdrop = document.querySelector('.my-calls-backdrop');
 
 // const gallery = document.querySelector('.js-gallery');
@@ -9,30 +13,28 @@ closeModalCallsBtn.addEventListener('click', isModalClose);
 modalBackdrop.addEventListener('click', clickOnBackdrop);
 window.addEventListener('keydown', downOnESC);
 
-function isModalOpen (evt) {
-    
-    
-    evt.preventDefault();
-    document.body.classList.add('is-open');
-    // window.addEventListener('keydown', onKeyLeafDown);
+function isModalOpen(evt) {
+  evt.preventDefault();
+  document.body.classList.add('is-open');
+  // window.addEventListener('keydown', onKeyLeafDown);
 }
 
-function isModalClose () {
+function isModalClose() {
   // if (evt.target.nodeName == 'FORM') {
   //   return;
   // };
   document.body.classList.remove('is-open');
-};
-  
-function clickOnBackdrop (evt) {
+}
+
+function clickOnBackdrop(evt) {
   if (evt.currentTarget === evt.target) {
-    isModalClose ();    
+    isModalClose();
   }
-};
-  
+}
+
 function downOnESC(evt) {
-    if (evt.code !== 'Escape') {
-      return;
-    };
-    isModalClose ();
-};
+  if (evt.code !== 'Escape') {
+    return;
+  }
+  isModalClose();
+}
