@@ -44,10 +44,13 @@ body.is-open .my-calls-modal {
     margin-left: auto;
     background-color: #ffffff;
 
-    // opacity: 0;
+    // opacitmy-calls-input-placeholders-label-imgy: 0;
     
     transform: scale(0.7);
     transition: transform 200ms ease-in-out;
+
+    font-family: Roboto, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 500px;
   }
   
   
@@ -158,6 +161,12 @@ body.is-open .my-calls-modal {
   .my-calls-input-placeholders-label-img{
     width: 78px;
     height: 46px;
+
+    border: gray solid 1px;
+    background-image: url(/src/images/icon-close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
   }
   
   .my-calls-input-placeholders-label-img:nth-child(-n + 4){
@@ -286,6 +295,8 @@ body.is-open .my-calls-modal {
     line-height: 14px;
     letter-spacing: 0.02em;
   
+    font-family: Roboto, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300px;
     color: #000000;
   }
   
@@ -317,8 +328,13 @@ body.is-open .my-calls-modal {
     align-items: center;
     border: none;
     background-color: inherit;
+    fill: #BBBBBB;
   
     cursor: pointer;
+
+    &:hover {
+      fill: $accent;
+    }
   }
   
   @media screen and (min-width: 768px) {
