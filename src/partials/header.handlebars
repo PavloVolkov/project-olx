@@ -1,0 +1,93 @@
+<header class="header-container container">
+
+    <div class="header__mobile-container">
+        <button class="search-button" data-search-open>
+            <svg class="icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-search"></use>
+            </svg>
+        </button>
+
+        <a href="#" class="logo">LOGO</a>
+
+        <button type="button" class="menu-button open" aria-label="Переключатель мобильного меню" aria-expanded="false"
+            data-menu-open>
+            <svg class="icon" width="24" height="24">
+                <use class="icon-menu" href="./images/symbol-defs.svg#icon-menu"></use>
+            </svg>
+        </button>
+
+        <div class="header__button-container">
+            <button type="button" class="header__button authorization" data-modal-open>
+                <span class="button__text">Реєстрація / Увійти</span>
+                <svg class="icon__account" width="24" height="24">
+                    <use class="" href="./images/symbol-defs.svg#icon-user-profile"></use>
+                </svg>
+            </button>
+            <button data-create-ad-modal-open type="button" class="header__create-add-btn modal-btn">Створити
+                оголошення!</button>
+        </div>
+    </div>
+
+    <div class="filter__container">
+        <div class="backdrop" data-backdrop>
+            <div class="mobile__menu-container is-open">
+
+                <button type="button" class="menu-button close" aria-label="Переключатель мобильного меню"
+                    aria-expanded="false" data-menu-close>
+                    <svg class="icon" width="24" height="24">
+                        <use class="icon-close" href="./images/symbol-defs.svg#icon-close"></use>
+                    </svg>
+                </button>
+
+                <ul class="filter__inner">
+
+                    <li class="user__button-mobile">
+                        <button type="button" class="user__button mobile" data-modal-open>Реєстрація /
+                            Увійти</button>
+                    </li>
+
+                    <li class="filter__item">
+                        <button class="filter__button">Нерухомість</button>
+                    </li>
+
+                    <li class="filter__item">
+                        <button class="filter__button">Транспорт</button>
+                    </li>
+
+                    <li class="filter__item">
+                        <button class="filter__button">Робота</button>
+                    </li>
+
+                    <li class="filter__item">
+                        <button class="filter__button">Електроніка</button>
+                    </li>
+
+                    <li class="filter__item">
+                        <button class="filter__button">Бізнес та послуги</button>
+                    </li>
+
+                    <li class="filter__item">
+                        <button class="filter__button">Відпочинок і спорт</button>
+                    </li>
+
+                    <li class="filter__item">
+                        <button class="filter__button">Віддам безкоштовно</button>
+                    </li>
+
+                    <li class="filter__item">
+                        <button class="filter__button">Обмін</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <button class="filter__button-clear" type="reset">
+            Очистити фільтри
+        </button>
+
+    </div>
+
+
+
+</header>

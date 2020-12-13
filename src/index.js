@@ -15,3 +15,5 @@ import './componentsJS/myCalls';
 
 
 // import './js/exampleBackend'
+
+import './js/menu'
