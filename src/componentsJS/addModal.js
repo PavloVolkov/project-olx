@@ -3,6 +3,8 @@ const refs = {
   openAddModalBtn: document.querySelector('[data-action="open-modal"]'),
   closeAddModalBtn: document.querySelector('[data-action="close-modal"]'),
   backdrop: document.querySelector('.js-backdrop'),
+  selectorCategory: document.querySelector('.add-modal__product-select'),
+  imgLoaderArea: document.querySelector('.add-modal__product-photos'),
 };
 
 refs.openAddModalBtn.addEventListener('click', onOpenAddModal);
@@ -34,10 +36,10 @@ function onEscKeyPress(event) {
 // Логика добавления изображения и перемещения "+" на следующий блок
 let imgLoaderArea;
 
-imgLoaderArea = document.querySelector('.add-modal__product-photos');
+// imgLoaderArea = document.querySelector('.add-modal__product-photos');
 
-imgLoaderArea.addEventListener('click', chooseImgBlock);
-imgLoaderArea.addEventListener('change', previewImg);
+refs.imgLoaderArea.addEventListener('click', chooseImgBlock);
+refs.imgLoaderArea.addEventListener('change', previewImg);
 
 //==================================
 function chooseImgBlock(event) {
@@ -88,3 +90,25 @@ function changeImgBlock(event) {
   nextImg.dataset.active = true;
   nextImg.nextElementSibling.classList.add('choose-this');
 }
+
+//===========================
+fetch('https://callboard-backend.herokuapp.com/call/categories')
+  .then(response => response.json())
+  .then(result => {
+    let translationOfWords = {
+      property: 'Нерухомість',
+      transport: ' Транспорт',
+      work: 'Робота',
+      electronics: 'Електроніка',
+      'business and services': 'Бізнес та послуги',
+      'recreation and sport': 'Відпочинок та спорт',
+      free: 'Віддам безкоштовно',
+      trade: 'Обмін',
+    };
+    const markup = result.map(
+      category =>
+        `<option value="${category}" class="select-option">${translationOfWords[category]}</option> `,
+    );
+    refs.selectorCategory.insertAdjacentHTML('beforeend', markup);
+  })
+  .catch(error => console.log('error', error));
