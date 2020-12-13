@@ -1,33 +1,30 @@
 <button type="button" data-action="open-modal-calls">Открыть "Редагувати оголошення"</button>
 
-<!-- Модалка -->
-
-<div class="my-calls-backdrop"></div>
-    <div class="my-calls-modal js-my-call-modal" >
+    <!-- Модалка -->
+    
+    <div class="my-calls-backdrop"></div>
+        <div class="my-calls-modal">
         <form action="" method="" name="MY-CALLS">
             <button class="my-calls-close-btn" data-action="close-modal-calls">
                 <svg width="24px" height="24px">
-                    <use href="/src/images/symbol-defs.svg#icon-close">
+                    <use href="../images/symbol-defs.svg#icon-close">
 
                     </use>
                 </svg>
             </button>
             <h1 class="my-calls-title">Редагувати оголошення</h1>
             <div class="my-calls-section">
-                <label class="my-calls-section-label">
-                    <p class="my-calls-item-p my-calls-name">Назва товару</p>
-                </label>
-                <input type="text" class="my-calls-input js-my-calls-input" />
+                <label class="my-calls-section-label"><p class="my-calls-item-p my-calls-name">Назва товару</p></label>
+                <input type="text" class="my-calls-input"/>
             </div>
             <div class="my-calls-section">
                 <p class="my-calls-item-p my-calls-foto">Фото</p>
                 <div class="my-calls-input-placeholders">
                     <label class="my-calls-input-placeholders-label" for="input_file_first">
-                        <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png">
+                        <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png" >
                     </label>
                     <input class="display_none" id="input_file_first" type="file" accept="image/*" />
-                    <label class="my-calls-input-placeholders-label" class="my-calls-input-placeholders-label"
-                        for="input_file_second">
+                    <label class="my-calls-input-placeholders-label" class="my-calls-input-placeholders-label" for="input_file_second">
                         <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png">
                     </label>
                     <input class="display_none" id="input_file_second" type="file" accept="image/*" />
@@ -51,13 +48,11 @@
             </div>
             <div class="my-calls-section">
                 <p class="my-calls-item-p">Опис товару</p>
-                <textarea class="my-calls-textarea js-my-calls-input" name="comment"></textarea>
+                <textarea class="my-calls-textarea" name="comment" ></textarea>
             </div>
             <div class="my-calls-section">
-                <label class="my-calls-section-label">
-                    <p class="my-calls-item-p my-calls-gods">Категорія товару</p>
-                </label>
-                <input list="categories" class="my-calls-input js-my-calls-input" />
+                <label class="my-calls-section-label"><p class="my-calls-item-p my-calls-gods">Категорія товару</p></label>
+                <input list="categories" class="my-calls-input"/>
                 <datalist id="categories">
                     <option>Нерухомість</option>
                     <option>Транспорт</option>
@@ -70,30 +65,26 @@
                 </datalist>
             </div>
             <div class="my-calls-section">
-                <label class="my-calls-section-label">
-                    <p class="my-calls-item-p  my-calls-price">Ціна</p>
-                </label>
-                <input type="text" class="my-calls-input js-my-calls-input" placeholder="0.00 грн" />
+                <label class="my-calls-section-label"><p class="my-calls-item-p  my-calls-price">Ціна</p></label>
+                <input type="text" class="my-calls-input" placeholder="0.00 грн"/>
             </div>
             <div class="my-calls-section">
-                <label class="my-calls-section-label">
-                    <p class="my-calls-item-p  my-calls-tel">Телефон</p>
-                </label>
-                <input type="tel" name="telephone" class="my-calls-input js-my-calls-input" placeholder="+38 (0--) --- -- --" />
+                <label class="my-calls-section-label"><p class="my-calls-item-p  my-calls-tel">Телефон</p></label>
+                <input type="tel" name="telephone" class="my-calls-input" placeholder="+38 (0--) --- -- --"/>
             </div>
             <button type="button" class="my-calls-delete-btn">
                 <svg width="14px" height="14px">
-                    <use href="/src/images/symbol-defs.svg#icon-file">
+                    <use href="../images/symbol-defs.svg#icon-file">
                     </use>
                 </svg>
                 <span class="delete-icon-calls" width="24px" height="24px"></span>
                 <span class="my-calls-delete-item">Видалити оголошення</span>
             </button>
             <div class="my-calls-btns">
-                <button type="button" class="my-calls-btn-org" data-my-call="save">Зберегти</button>
+                <button type="button" class="my-calls-btn-org">Зберегти</button>
                 <button type="button" class="my-calls-btn-wt">Відміна</button>
             </div>
-
+            
         </form>
     </div>
 </div>
