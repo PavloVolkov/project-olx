@@ -1,44 +1,46 @@
-body.modal-open {
-  overflow: hidden;
+// body.hidden {
+//   overflow: hidden;
+// }
+
+body.show-modal .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+body.show-modal .modal {
+  transform: scale(1);
 }
 
 .backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(0, 0, 0, 0.7);
-
-  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: $backdropbgc;
+  z-index: 999;
   overflow-y: scroll;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.backdrop.is-hidden {
-  opacity: 0;
   pointer-events: none;
-}
-
-.backdrop.is-hidden.add-modal {
-  transform: translate(-50%, -50%) scale(0, 9);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
 }
 
 .add-modal {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-
+  padding: 54px 20px 60px;
   width: 290px;
   height: 875px;
-  padding: 54px 20px 60px;
   margin: 0;
-  background-color: #ffffff;
-
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: $modalcardbgc;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  transform: scale(1.1);
+  transition: transform 200ms ease-in-out;
 }
 
 .add-modal__close-btn {
@@ -60,7 +62,7 @@ body.modal-open {
   font-family: 'Roboto';
   font-size: 20px;
   letter-spacing: 0.02em;
-  color: #000000;
+  color: $basic;
   line-height: 1.15;
   text-align: start;
   margin-bottom: 20px;
@@ -69,7 +71,6 @@ body.modal-open {
 .add-modal__form {
   display: flex;
   flex-flow: column;
-  // align-items: center;
 }
 
 .add-modal__product-name-title,
@@ -82,7 +83,7 @@ body.modal-open {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: #000000;
+  color: $basic;
   line-height: 1.15;
   text-align: start;
   margin-bottom: 10px;
@@ -95,24 +96,28 @@ body.modal-open {
   height: 56px;
   line-height: 1.15;
   border: 1px solid #bbbbbb;
-  background-color: #ffffff;
+  background-color: $modalcardbgc;
   margin-bottom: 20px;
   padding-left: 23px;
 }
 
-/* .input:required:invalid:not(:placeholder-shown) {
+// .input:required:invalid:not(:placeholder-shown) {
+//   border: 1px solid rgb(255, 0, 0);
+//   background-color: rgb(247, 243, 242);
+// }
+// .input:required:valid:not(:placeholder-shown) {
+//   border: 1px solid rgb(0, 128, 0);
+//   background-color: rgb(242, 247, 238);
+// }
+
+.input.error {
   border: 1px solid rgb(255, 0, 0);
-  background-color: rgb(247, 243, 242);
 }
-.input:required:valid:not(:placeholder-shown) {
-  border: 1px solid rgb(0, 128, 0);
-  background-color: rgb(242, 247, 238);
-} */
 
 .input:hover,
 .input:focus {
   outline: none;
-  border: 1px solid #ff6b09;
+  border: 1px solid $accent;
 }
 
 .input::placeholder {
@@ -151,6 +156,7 @@ body.modal-open {
   background-image: url('/src/images/icon-add.svg');
   background-repeat: no-repeat;
   background-position: center;
+  margin: 0;
 }
 
 .choose-this:hover,
@@ -165,14 +171,14 @@ body.modal-open {
   width: 77px;
   height: 46px;
 
-  background-color: #f5f6fb;
+  background-color: $modalbgc;
 }
 
-/* .input-label__img {
+.input-label__img {
   width: 77px;
   height: 46px;
   object-fit: cover;
-} */
+}
 .add-modal__product-description {
   resize: vertical;
   min-height: 56px;
@@ -195,10 +201,10 @@ body.modal-open {
 .add-product-btn {
   width: 251px;
   height: 50px;
-  background-color: #ff6b09;
+  background-color: $accent;
   font-family: 'Roboto';
   font-size: 12px;
-  color: #ffffff;
+  color: $modalcardbgc;
   text-transform: uppercase;
   line-height: 1.15;
   letter-spacing: 0.02em;
@@ -214,7 +220,7 @@ body.modal-open {
 }
 /*===============================================*/
 
-@media (min-width: 768px) {
+@media (min-width: $mobile-upper) {
   .add-modal {
     top: 50%;
     left: 50%;
@@ -259,10 +265,10 @@ body.modal-open {
     width: 84px;
     height: 50px;
   }
-  /* .input-label__img{
+  .input-label__img {
     width: 84px;
     height: 50px;
-  } */
+  }
 
   .input-wrapper {
     display: flex;
@@ -291,9 +297,9 @@ body.modal-open {
     margin-left: 155px;
   }
 
-  /* .select-option-hiden {
+  .select-option-hiden {
     font-size: 0;
-  } */
+  }
   .add-modal__product-photos-item:nth-last-child(-n + 1) {
     display: none;
   }
@@ -313,7 +319,7 @@ body.modal-open {
 
 /*===============================================*/
 
-@media (min-width: 1280px) {
+@media (min-width: $table-upper) {
   .add-modal {
     width: 861px;
     padding-bottom: 105px;
@@ -333,12 +339,33 @@ body.modal-open {
     width: 78px;
     height: 50px;
   }
-  /* .input-label__img {
+  .input-label__img {
     width: 78px;
     height: 50px;
-  } */
+  }
   .add-product-btn {
     width: 210px;
     margin-left: 210px;
   }
 }
+
+// .add-form__error-message.error-price {
+//   display: none;
+// }
+
+// .add-form__error-message.error-price.visible {
+//   display: block;
+// }
+
+// .add-form__error-message {
+//   transition: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+//   opacity: 0;
+// }
+
+// .add-form__error-message.visible {
+//   display: block;
+//   opacity: 1;
+//   width: 100%;
+//   color: red;
+//   border-bottom: 1px solid red;
+// }
