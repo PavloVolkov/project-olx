@@ -21,12 +21,12 @@ myHeaders.append(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
 );
 
-/* 
+/*
 ///////////////// Регистрация /////////////////
 
 const urlAuthRegister = `${BASE_URL}/auth/register`;
 
- // Регистрация 
+ // Регистрация
 fetch(urlAuthRegister, option)
  .then((r) => r.json())
  .then(console.log);
@@ -93,7 +93,7 @@ fetch(urlCallCategory, myHeaders)
   .then(r => r.json())
   .then(console.log);
 
-/* Отвут
+/* Ответ
 [
   'property',
   'transport',
@@ -169,8 +169,8 @@ const optionFavour = {
   body: JSON.stringify(postToAdd),
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization':
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc'
+    Authorization:
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
   },
 };
 
@@ -178,7 +178,7 @@ const optionFavour = {
 //   .then(r => r.json())
 //   .then(console.log);
 
-  /* Ответ
+/* Ответ
   {"newFavourites":[{"imageUrls":["https://storage.googleapis.com/kidslikev2_bucket/1798bb23-aab7-4b24-9741-529d03356339.jpeg"],"_id":"5fd367626da6ab0017dbf38b","title":"Red Shirt1112","description":"New red shirt, made from cotton","category":"business and services","phone":"+380000000000","price":200,"isOnSale":false,"userId":"5fcf34b02d55d90017ae338f","__v":0}]}
   */
 
@@ -190,11 +190,11 @@ const optionFavourDel = {
   body: JSON.stringify(postToAdd),
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization':
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc'
+    Authorization:
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
   },
 };
- 
+
 // fetch(urlCallCFavourDel, optionFavourDel)
 //   .then(r => r.json())
 //   .then(console.log);
@@ -203,13 +203,13 @@ const optionFavourDel = {
   {"newFavourites":[{"imageUrls":["https://storage.googleapis.com/kidslikev2_bucket/07f526f8-4cbe-4d47-8b3a-ffd3cdc3e150.jpeg"],"_id":"5fd076b7deae5f0017e41a7d","title":"Red Shirt","description":"New red shirt, made from cotton","category":"business and services","price":255,"phone":"+380000000000","isOnSale":false,"userId":"5fcf371a2d55d90017ae3391","__v":0}]}
   */
 
-  ///////////////// Поиск по заголовку /////////////////
- const urlFind = `${BASE_URL}/call/find?search=Red Shirt1112`;
+///////////////// Поиск по заголовку /////////////////
+const urlFind = `${BASE_URL}/call/find?search=Red Shirt1112`;
 
 fetch(urlFind, myHeaders)
   .then(r => r.json())
   .then(console.log);
 
-  /* Ответ
+/* Ответ
   [{"_id":"5fd367626da6ab0017dbf38b","imageUrls":["https://storage.googleapis.com/kidslikev2_bucket/1798bb23-aab7-4b24-9741-529d03356339.jpeg"],"title":"Red Shirt1112","description":"New red shirt, made from cotton","category":"business and services","phone":"+380000000000","price":200,"isOnSale":false,"userId":"5fcf34b02d55d90017ae338f","__v":0}]
   */

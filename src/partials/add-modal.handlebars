@@ -1,37 +1,45 @@
-{{!-- is-hidden-если надо отобразить модалку уберите это из класса бэкдропа --}}
-<div class="backdrop is-hidden" data-backdrop>
+<button class="header__create-add-btn modal-btn" data-action="open-modal">
+            СТВОРИТИ ОГОЛОШЕННЯ
+          </button>
+
+<div class="backdrop js-backdrop">
         <div class="add-modal">
           <button
             type="button"
             class="add-modal__close-btn"
-            data-close="true"
+            data-action="close-modal"
           ></button>
 
           <h2 class="add-modal__form--title">Додати оголошення</h2>
 
-          <form class="add-modal__form" name="addForm">
+          <form action="#" class="add-modal__form js-add-form" name="addForm">
             <div>
               <div class="input-wrapper">
                 <p class="add-modal__product-name-title">Назва товару</p>
                 <input
                   type="text"
-                  name="productName"
-                  class="add-modal__product-name input"
-                  id=""
+                  name="product-name"
+                  class="add-modal__product-name _req _name input"
+                  id="form-name"
                   data-source="name"
                   autocomplete="off"
-                  minlength="2"
-                  maxlength="20"
+                  {{!-- minlength="3"
+                  maxlength="15" --}}
                   placeholder=""
                 />
+                {{!-- <div class="add-form__error-message">
+                Введіть коректну назву товару
+              </div> --}}
               </div>
 
               <div class="input-wrapper">
                 <p class="add-modal__product-photos-title">Фото</p>
-                <ul class="add-modal__product-photos">
+                <ul class="add-modal__product-photos _req">
                   <li class="add-modal__product-photos-item">
                     <input
-                      class="photo-input"
+                    accept=".jpg"
+                    type="file"
+                      class="photo-input add-image"
                       data-id="1"
                       data-active="true"
                       name=""
@@ -132,26 +140,33 @@
                     /></label>
                   </li>
                 </ul>
+                {{!-- <div class="add-form__error-message">
+                Потрібно добавити від 1-го до 5-ти фото
+              </div> --}}
               </div>
 
               <div class="input-wrapper">
                 <p class="add-modal__product-description-title">Опис товару</p>
                 <textarea
-                  name="productDescription"
+                  name="product-description"
                   data-source="description"
-                  class="add-modal__product-description input"
+                  class="add-modal__product-description _description _req input"
                   id=""
-                  maxlength="245"
+                  {{!-- minlength="15"
+                  maxlength="245" --}}
                   placeholder=""
                 ></textarea>
+                {{!-- <div class="add-form__error-message">
+                Коректний опис товару - мінімум 30 символів
+              </div> --}}
               </div>
 
               <div class="input-wrapper">
                 <p class="add-modal__product-select-title">Категорія товару</p>
                 <div class="select">
                   <select
-                    name="productCategory"
-                    class="add-modal__product-select input"
+                    name="product-category"
+                    class="add-modal__product-select _category _req input"
                     id=""
                   >
                     <option
@@ -159,27 +174,33 @@
                       class="select-option select-option-first"
                       selected
                     ></option>
-                    <option value="property" class="select-option">
+                    {{!-- <option value="property" class="select-option">
                       Нерухомість
                     </option>
                     <option value="transport" class="select-option">
                       Транспорт
                     </option>
-                    <option value="work" class="select-option">Работа</option>
+                    <option value="work" class="select-option">
+                      Работа
+                    </option>
                     <option value="electronics" class="select-option">
                       Электроніка
                     </option>
-                    <option value="business-and-services" class="select-option">
+                    <option value="business and services" class="select-option">
                       Бізнес та послуги
                     </option>
-                    <option value="recreation-and-sports" class="select-option">
+                    <option value="recreation and sports" class="select-option">
                       Відпочинок та спорт
                     </option>
                     <option value="free" class="select-option">
                       Віддам безкоштовно
                     </option>
-                    <option value="trade" class="select-option">Обмін</option>
+                    <option value="trade" class="select-option">
+                      Обмін
+                      </option> --}}
                   </select>
+                  {{!-- <div class="add-form__error-message">Виберіть категорію</div>
+            </div> --}}
                 </div>
               </div>
 
@@ -187,26 +208,34 @@
                 <p class="add-modal__product-price-title">Ціна</p>
                 <input
                   type="text"
-                  name="productPrice"
+                  id="form-price"
+                  name="product-price"
                   data-source="price"
-                  class="add-modal__product-price input"
+                  class="add-modal__product-price _price _req input"
                   autocomplete="off"
-                  minlength="1"
-                  maxlength="16"
+                  {{!-- minlength="1"
+                  maxlength="16" --}}
                   placeholder="0.00 грн"
                 />
+                {{!-- <div class="add-form__error-message">
+                Введіть коректну ціну товару
+              </div>
+              <div class="add-form__error-message error-price">
+                Ціна для цїєї категорії має бути 0
+              </div> --}}
               </div>
 
               <div class="input-wrapper">
                 <p class="add-modal__product-telephone-number-title">Телефон</p>
                 <input
+                id="form-phone"
                   type="tel"
-                  name="productPhone"
+                  name="product-phone"
                   data-source="phone"
-                  class="add-modal__product-telephone-number input"
-                  id=""
+                  class="add-modal__product-telephone-number _phone _req input"
                   placeholder="+38 (0--) --- -- --"
                 />
+                {{!-- <div class="add-form__error-message">Введіть номер телефону</div> --}}
               </div>
             </div>
             <button type="submit" class="add-product-btn" data-close="">
