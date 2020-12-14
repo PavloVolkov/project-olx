@@ -1,4 +1,3 @@
-import refs from './refs'
 import requires from './componentsHTML'
 
 const contain = requires.reduce((acc, el) => {
@@ -7,4 +6,9 @@ const contain = requires.reduce((acc, el) => {
   return acc;
 }, '')
 
-refs.body.insertAdjacentHTML('beforeend', contain )
+const bodyRef = document.querySelector('body');
+bodyRef.insertAdjacentHTML('beforeend', contain )
+
+const refs = {}
+
+export default refs;
