@@ -1,0 +1,27 @@
+    <div class="container-1">
+      <div class="arrow-box"><div class="filler"></div></div>
+      <div class="multiple-items">
+   
+        {{#each this}}
+        <div class="inner-box">
+          <div class="prod_card">
+            <a class="prod_card-link" href="#">
+              <div class="prod_card-inner_wrapper">
+                <img class="prod_card-image" src="{{link}}" alt="">
+                <div class="cover">
+                  <div class="heart_icon-wrapper"></div>
+                  <div class="fullscreen_icon-wrapper"></div>
+                </div>
+                <div class="prod_card-description">
+                  <div class="prod_card-position">{{prod-name}}</div>
+                  <div class="prod_card-price_box">
+                     <span class="prod_card-old_price">{{price}}</span>
+                     <span class="prod_card-new_price">{{sale-price}}</span>
+                </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {{/each}}
+   </div>

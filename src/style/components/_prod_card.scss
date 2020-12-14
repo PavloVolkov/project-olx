@@ -1,7 +1,7 @@
 .prod_card {
-
-    margin-top:30px;
-    margin-bottom: 30px;
+   display: flex;
+    margin-top:1px;
+    margin-bottom: 1px;
     height: 350px;
     width: 290px;
     font-weight:300;
@@ -14,17 +14,17 @@
     &:focus .cover  {
     opacity: 1;
     }
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 320px) {
         height: 350px;
-        width: 290px;
+        width: 100%;
     }
     @media screen and (min-width: 768px) {
         height: 350px;
-        width: 352px;
+        max-width: 352px;
     }
     @media screen and (min-width: 1200px) {
         height: 350px;
-        width: 295px;
+        max-width: 295px;
     }
     &-inner_wrapper {
         position:relative;
@@ -40,8 +40,10 @@
         height:100%;
     }
     &-image {
+        align-self: center;
         display: block;
         width: 100%;
+        max-width: 352px;
         height: auto;
         max-height: 280px;
     };

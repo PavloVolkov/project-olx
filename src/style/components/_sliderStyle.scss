@@ -1,0 +1,49 @@
+.container-1 {
+    width: 80%;
+    margin:0 auto;
+    
+}
+.slick-list {margin: 0 -10px;}
+.slick-slide>div {padding: 0 10px;}
+.inner-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width:100%;
+    // height: auto;
+    // height: 100px;
+    // background-color: blue;
+}
+.arrow-box {
+  
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+}
+.filler {
+    display: flex;
+    width: 100%;
+    // background-color: red;
+    
+}
+.arrow-box > .btn-custom {
+    border: none;
+     outline: none;
+     padding: 0;
+     display: flex;
+     align-items: center;
+     box-shadow: none;
+     background-color: white;
+}
+// .fa-custom {
+// }
+.arrow-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    &:hover,
+    &:focus {
+        fill: white;
+        background-color: orangered;
+    }
+}
