@@ -1,0 +1,27 @@
+{{#each this}}
+<li class="item-category">
+    <div class="img-category">
+        <img src="{{imageUrls}}" alt={{title}} />
+        <button type="button" class="favorite">
+            <svg width="16px" height="16px" class="favorite-icon">
+                <use href="./images/symbol-defs.svg#icon-heart"></use>
+            </svg>
+        </button>
+        <button type="button" class="full-screen">
+            <svg width="11px" height="11px" class="full-screen-icon">
+                <use href="./images/symbol-defs.svg#icon-fullscreen"></use>
+            </svg>
+        </button>
+    </div>
+
+    <p class="product-title">{{title}}</p>
+
+    {{#if oldPrice}}
+    <p>
+        <span class="old-price">{{oldPrice}}</span><span class="hot-price">{{price}}</span>
+    </p>
+    {{else}}
+    <p class="price">{{price}}</p>
+    {{/if}}
+</li>
+{{/each}}
